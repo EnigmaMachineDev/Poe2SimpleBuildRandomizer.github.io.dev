@@ -1,0 +1,10 @@
+                pathfinder: [
+                    "Bleeding Concoction", "Poison Concoction", "Shattering Concoction",
+                    "Fulminating Concoction", "Explosive Concoction"
+                ],
+                smith_of_kitava: [
+                    "Manifest Weapon"
+                ],
+                warbringer: [
+                    "Seismic Cry", "Infernal Cry"
+                ]

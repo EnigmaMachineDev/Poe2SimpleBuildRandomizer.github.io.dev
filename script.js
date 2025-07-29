@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     let data;
+    let currentAscendancy;
+
+    const ascendancySkills = {
+        "Pathfinder": ["Bleeding Concoction", "Poison Concoction", "Shattering Concoction", "Fulminating Concoction", "Explosive Concoction"],
+        "Smith of Kitava": ["Manifest Weapon"],
+        "Warbringer": ["Seismic Cry", "Infernal Cry"]
+    };
 
     fetch('randomizer.json')
         .then(response => {
@@ -50,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!randomClass) return;
         const randomAscendancy = getRandomItem(randomClass.ascendancies);
         if (!randomAscendancy) return;
+        currentAscendancy = randomAscendancy;
         document.getElementById('class-result').textContent = `Class: ${randomClass.name}`;
         document.getElementById('ascendancy-result').textContent = `Ascendancy: ${randomAscendancy}`;
     }
@@ -58,14 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Rolling weapon and skills');
         const randomWeapon = getRandomItem(data.weapons);
         if (!randomWeapon) return;
+
+        let skillPool = [...randomWeapon.skills];
+        if (currentAscendancy && ascendancySkills[currentAscendancy]) {
+            skillPool.push(...ascendancySkills[currentAscendancy]);
+        }
+
         const numSkills = Math.floor(Math.random() * 3) + 1;
         const selectedSkills = [];
-        // Ensure weapon has skills
-        if (randomWeapon.skills && randomWeapon.skills.length > 0) {
+        if (skillPool.length > 0) {
             for (let i = 0; i < numSkills; i++) {
-                selectedSkills.push(getRandomItem(randomWeapon.skills));
+                selectedSkills.push(getRandomItem(skillPool));
             }
         }
+
         document.getElementById('weapon-type-result').textContent = `Weapon Type: ${randomWeapon.name}`;
         document.getElementById('main-skills-result').textContent = `Main Skill(s): ${selectedSkills.join(', ')}`;
     }

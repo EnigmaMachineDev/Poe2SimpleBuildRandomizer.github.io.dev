@@ -12,3 +12,13 @@ I want to make this application a bit more simple, and a bit easier for users to
 
 When you decoupled the rolls you changed randomizer.json completely to use path of exile 1 classes, weapons, and skills. Please revert this change to use poe 2 classes weapons and skills. 
 Reference randomizerReference file to make this change (it is a copy of the old buildData).
+
+--------------------------------------------------------------------------------------------------------------
+
+When the app was more complicated and coupled, there were certain classes that had certain skills added to the list. I still want those class specific skills to be rollable.
+Please reference ascendencySkillReference, and based on that, when that specific class has been rolled, the rollable main skills should include those ascendency specific skills. 
+It should be part of the skill pool regardless of weapon when the roll all button is clicked if the class is one of the classes in the list, and it should be available to reroll to if the current class is one of the classes in the list.
+
+For example if I am a pathfinder, regardless of what the primary weapon is, I should be able to roll the pathfinder skills from the reference:
+["Bleeding Concoction", "Poison Concoction", "Shattering Concoction","Fulminating Concoction", "Explosive Concoction"]
+
