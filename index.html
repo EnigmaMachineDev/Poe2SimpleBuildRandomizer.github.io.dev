@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4167298152172606" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoE2 Random Build Generator</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn46yPC90ZXh0Pjwvc3ZnPg==" type="image/svg+xml">    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(30, 30, 50, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .generate-btn, .export-btn {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generate-btn {
+            background: #ff6b6b;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .export-btn {
+            background: #4ecdc4;
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
+            background: #ff5252;
+        }
+
+        .export-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(78, 205, 196, 0.5);
+            background: #26d0ce;
+        }
+
+        .generate-btn:active, .export-btn:active {
+            transform: translateY(0);
+        }
+
+        .build-display {
+            display: none;
+        }
+
+        .build-section {
+            background: rgba(40, 40, 60, 0.8);
+            margin: 25px 0;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #ffd700;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .build-section:hover {
+            background: rgba(50, 50, 70, 0.9);
+            transform: translateX(10px) scale(1.02);
+            border-left-color: #4ecdc4;
+        }
+
+        .section-title {
+            color: #ffd700;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            color: #e0e0e0;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #4ecdc4;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: rgba(30, 30, 50, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #4ecdc4;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-style: italic;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .coffee-link {
+            margin-top: 15px;
+        }
+
+        .coffee-link a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-style: normal;
+        }
+
+        .coffee-link a:hover {
+            color: #fff;
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4ecdc4;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .generate-btn, .export-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-particles" id="particles"></div>
+    <div class="container">
+        <h1>Path of Exile 2<br>Random Build Idea Generator</h1>
+        <div class="controls">
+            <button class="generate-btn" onclick="generateBuild()">
+                🎲 Generate Random Build
+            </button>
+        </div>
+            <div class="build-section">
+                <div class="section-title">🏛️ Class & Ascendancy</div>
+                <div class="section-content" id="classInfo"></div>
+            </div>
+            <div class="build-section">
+                <div class="section-title">⚔️ Weapon Type</div>
+                <div class="section-content" id="weaponInfo"></div>
+            </div>
+            <div class="build-section">
+                <div class="section-title">🔮 Main Skill(s)</div>
+                <div class="section-content" id="skillInfo"></div>
+            </div>
+            <div class="build-section">
+                <div class="section-title">🛡️ Defense Strategy</div>
+                <div class="section-content" id="defenseInfo"></div>
+            </div>
+        </div>
+        <div class="footer">
+            Click the button above to generate a random build idea for Path of Exile 2!<br>
+            <div class="coffee-link">
+                <a href="https://buymeacoffee.com/EnigmaMachineDev" target="_blank" rel="noopener noreferrer">
+                    ☕ Buy me a coffee
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="toast" id="toast">Build copied to clipboard!</div>
+
+    <script>
+        const buildData = {
+            classes: [
+                { 
+                    name: "Witch", 
+                    ascendancies: ["Infernalist", "Blood Mage", "Lich"],
+                    attributes: ["Intelligence", "Dexterity and Intelligence", "Intelligence and Strength", "Strength", "Dexterity"]
+                },
+                { 
+                    name: "Sorceress", 
+                    ascendancies: ["Stormweaver", "Chronomancer"],
+                    attributes: ["Intelligence", "Dexterity and Intelligence", "Intelligence and Strength", "Strength", "Dexterity"]
+                },
+                { 
+                    name: "Monk", 
+                    ascendancies: ["Invoker", "Acolyte of Chayula"],
+                    attributes: ["Dexterity and Intelligence", "Intelligence", "Dexterity", "Intelligence and Strength", "Dexterity and Strength"]
+                },
+                { 
+                    name: "Ranger", 
+                    ascendancies: ["Deadeye", "Pathfinder"],
+                    attributes: ["Dexterity", "Dexterity and Intelligence", "Dexterity and Strength", "Strength", "Intelligence"]
+                },
+                { 
+                    name: "Mercenary", 
+                    ascendancies: ["Witchhunter", "Gemling Legionnaire", "Tactician"],
+                    attributes: ["Dexterity and Strength", "Dexterity", "Strength", "Dexterity and Intelligence", "Intelligence and Strength"]
+                },
+                { 
+                    name: "Warrior", 
+                    ascendancies: ["Titan", "Warbringer", "Smith of Kitava"],
+                    attributes: ["Strength", "Dexterity and Strength", "Intelligence and Strength", "Dexterity", "Intelligence"]
+                },
+                { 
+                    name: "Huntress", 
+                    ascendancies: ["Amazon", "Ritualist"],
+                    attributes: ["Dexterity", "Dexterity and Intelligence", "Dexterity and Strength", "Strength", "Intelligence"]
+                }
+            ],
+            
+            weapons: {
+                "Staff": { attributes: ["Intelligence"] },
+                "Wand + Focus": { attributes: ["Intelligence"] },
+                "Dual Wands": { attributes: ["Intelligence"] },
+                "Wand + Sceptre": { attributes: ["Intelligence"] },
+                "Wand + Shield": { attributes: ["Intelligence"] },
+                "Scepter + Shield": { attributes: ["Intelligence"] },
+                "Scepter + Focus": { attributes: ["Intelligence"] },
+                "Bow": { attributes: ["Dexterity"] },
+                "Crossbow": { attributes: ["Dexterity and Strength"] },
+                "Quarterstaff": { attributes: ["Dexterity and Intelligence"] },
+                "Mace + Shield": { attributes: ["Strength"] },
+                "Mace + Sceptre": { attributes: ["Intelligence and Strength"] },
+                "Two-Handed Mace": { attributes: ["Strength"] },
+                "Spear + Shield": { attributes: ["Dexterity"] },
+                "Spear": { attributes: ["Dexterity"] },
+                "Spear + Sceptre": { attributes: ["Dexterity and Intelligence"] },
+                "Dual Wielding Maces": { attributes: ["Strength"] }
+            },
+
+            defenseTypes: {
+                "Armour": { attributes: ["Strength"] },
+                "Armour and Energy Shield": { attributes: ["Intelligence and Strength"] },
+                "Armour and Evasion": { attributes: ["Dexterity and Strength"] },
+                "Block and Armour": { attributes: ["Strength"] },
+                "Block, Armour, and Evasion": { attributes: ["Dexterity and Strength"] },
+                "Block, Armour, and Energy Shield": { attributes: ["Intelligence and Strength"] },
+                "Block and Energy Shield": { attributes: ["Intelligence"] },
+                "Block, Energy Shield, and Evasion": { attributes: ["Dexterity and Intelligence"] },
+                "Block and Evasion": { attributes: ["Dexterity"] },
+                "Energy Shield": { attributes: ["Intelligence"] },
+                "Energy Shield and Evasion": { attributes: ["Dexterity and Intelligence"] },
+                "Evasion": { attributes: ["Dexterity"] }
+            },
+            
+            skills: {
+                elemental: [
+                    "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", 
+                    "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall",
+                    "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", 
+                    "Eye of Winter", "Ice Shards", "Ice Bolt",
+                    "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt",
+                    "Enfeeble", "Vulnerability", "Despair"
+                ],
+                occult: [
+                    "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual",
+                    "Dark Effigy", "Hexblast", "Offensive Hex"
+                ],
+                minion: [
+                    "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre"
+                ],
+                offering: [
+                    "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric"
+                ],
+                wand: [
+                    "Contagion", "Enfeeble", "Vulnerability", "Despair"
+                ],
+                bow: [
+                    "Explosive Shot", "Poison Arrow", "Lightning Arrow", "Ice Shot",
+                    "Poisonburst Arrow", "Toxic Growth", "Gas Arrow", "Escape Shot",
+                    "Freezing Salvo", "Lightning Rod", "Stormcaller Arrow", "Shockchain Arrow",
+                    "Magnetic Salvo", "Snipe", "Rain of Arrows", "Tornado Shot",
+                    "Spiral Volley", "Detonating Arrow"
+                ],
+                crossbow: [
+                    "Fragmentation Rounds", "Armour Piercing Rounds", "High Velocity Rounds", 
+                    "Permafrost Bolts", "Ice Shards", "Glacial Bolt", "Hailstorm Rounds", 
+                    "Incendiary Shot", "Rapid Shot", "Explosive Shot", "Seige Cascade", 
+                    "Galvanic Shards", "Stormblast Bolts", "Shockburst Rounds", "Plasma Blast", 
+                    "Explosive Grenade", "Gas Grenade", "Cluster Grenade", "Voltaic Grenade", 
+                    "Ripwire Ballista", "Artillery Ballista", "Rapid Fire"
+                ],
+                quarterstaff: [
+                    "Falling Thunder", "Tempest Bell", "Wind Blast", "Ice Strike",
+                    "Tempest Flurry", "Storm Wave", "Charged Staff", "Gathering Storm",
+                    "Glacial Cascade", "Frozen Locus", "Wave of Frost", "Shattering Palm",
+                    "Whirling Assault", "Flicker Strike", "Staggering Palm"
+                ],
+                twohanded_mace: [
+                    "Supercharged Slam"
+                ],
+                mace: [
+                    "Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder",
+                    "Stampede", "Hammer of the Gods", "Shockwave Totem",
+                    "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure"
+                ],
+                shield: [
+                    "Shield Charge", "Resonating Shield", "Shield Wall"
+                ],
+                spear: [
+                    "Perfect Strike", "Lacerate", "Whirling Slash", "Twister",
+                    "Whirlwind Lance", "Wind Serpents Fury", "Explosive Spear",
+                    "Spear of Solaris", "Lightning Spear", "Storm Lance",
+                    "Primal Strikes", "Thunderous Leap", "Fangs of Frost",
+                    "Glacial Lance", "Rake", "Rapid Assault", "Blood Hunt",
+                    "Tame Beast", "Elemental Sundering"
+                ],
+                pathfinder: [
+                    "Bleeding Concoction", "Poison Concoction", "Shattering Concoction",
+                    "Fulminating Concoction", "Explosive Concoction"
+                ],
+                smith_of_kitava: [
+                    "Manifest Weapon"
+                ],
+                warbringer: [
+                    "Seismic Cry", "Infernal Cry"
+                ]
+            },
+            
+            weaponCompatibility: {
+                "Staff": ["elemental", "occult"],
+                "Wand + Focus": ["elemental", "occult"],
+                "Dual Wands": ["elemental", "occult"],
+                "Wand + Sceptre": ["elemental", "minion", "wand", "occult"],
+                "Wand + Shield": ["elemental", "minion", "wand", "occult", "shield"],
+                "Scepter + Shield": ["elemental", "occult", "minion", "shield"],
+                "Scepter + Focus": ["elemental", "occult", "minion"],
+                "Bow": ["bow"],
+                "Crossbow": ["crossbow"],
+                "Quarterstaff": ["quarterstaff"],
+                "Mace + Shield": ["mace", "shield"],
+                "Mace + Sceptre": ["mace", "elemental", "minion", "occult"],
+                "Two-Handed Mace": ["twohanded_mace", "mace"],
+                "Spear + Shield": ["spear", "shield"],
+                "Spear": ["spear"],
+                "Spear + Sceptre": ["spear", "elemental", "minion", "occult"],
+                "Dual Wielding Maces": ["mace"]
+            }
+        };
+
+        let currentBuild = null;
+
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function isWeaponCompatibleWithClass(selectedClass, weaponName) {
+            const weaponAttributes = buildData.weapons[weaponName].attributes;
+            const classAttributes = selectedClass.attributes;
+            return(classAttributes.includes(weaponAttributes[0]));
+        }
+
+        function isWeaponCompatibleWithDefenseType(selectedClass, defenseType, selectedWeapon) {
+            if (defenseType.includes("Block") && !selectedWeapon.includes("Shield")) {
+                return false;
+            }
+            const defenseTypeAttributes = buildData.defenseTypes[defenseType].attributes;
+            const classAttributes = selectedClass.attributes;
+            return(classAttributes.includes(defenseTypeAttributes[0]));
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function generateBuild() {
+            const selectedClass = getRandomElement(buildData.classes);
+            const selectedAscendancy = getRandomElement(selectedClass.ascendancies);
+            const compatibleWeapons = Object.keys(buildData.weapons).filter(weaponName => 
+                isWeaponCompatibleWithClass(selectedClass, weaponName)
+            );
+            const selectedWeapon = getRandomElement(compatibleWeapons);
+            const compatibleDefenseTypes = Object.keys(buildData.defenseTypes).filter(defenseType => 
+                isWeaponCompatibleWithDefenseType(selectedClass, defenseType, selectedWeapon)
+            );
+            const selectedDefenseType = getRandomElement(compatibleDefenseTypes);
+            const compatibleCategories = buildData.weaponCompatibility[selectedWeapon];
+            const compatibleSkills = [];
+            compatibleCategories.forEach(category => {
+                if (buildData.skills[category]) {
+                    compatibleSkills.push(...buildData.skills[category]);
+                }
+            });
+            if (selectedAscendancy === "Warbringer" && buildData.skills.warbringer) {
+                compatibleSkills.push(...buildData.skills.warbringer);
+            }
+            if (selectedAscendancy === "Pathfinder" && buildData.skills.pathfinder) {
+                compatibleSkills.push(...buildData.skills.pathfinder);
+            }
+            if (selectedAscendancy === "Smith of Kitava" && buildData.skills.smith_of_kitava) {
+                compatibleSkills.push(...buildData.skills.smith_of_kitava);
+            }
+            const uniqueSkills = [...new Set(compatibleSkills)];
+            const numSkills = Math.random() < 0.50 ? 2 : 1;
+            const selectedSkills = [];
+            const skillsCopy = [...uniqueSkills];
+            for (let i = 0; i < numSkills && skillsCopy.length > 0; i++) {
+                const skill = getRandomElement(skillsCopy);
+                selectedSkills.push(skill);
+                skillsCopy.splice(skillsCopy.indexOf(skill), 1);
+            }
+            currentBuild = {
+                class: selectedClass.name,
+                ascendancy: selectedAscendancy,
+                weapon: selectedWeapon,
+                skills: selectedSkills,
+                defense: selectedDefenseType
+            };
+            document.getElementById('classInfo').innerHTML = 
+                `<span class="highlight">${selectedClass.name}</span> → <span class="highlight">${selectedAscendancy}</span>`;
+            document.getElementById('weaponInfo').innerHTML = 
+                `<span class="highlight">${selectedWeapon}</span>`;
+            document.getElementById('skillInfo').innerHTML = 
+                selectedSkills.map(skill => `<span class="highlight">${skill}</span>`).join(numSkills > 1 ? ' + ' : '');
+            document.getElementById('defenseInfo').innerHTML = 
+                `<span class="highlight">${selectedDefenseType}</span>`;
+            const exportBtn = document.getElementById('exportBtn');
+            exportBtn.style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>
