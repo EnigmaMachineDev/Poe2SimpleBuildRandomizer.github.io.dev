@@ -1,0 +1,58 @@
+                wand: [
+                    "Contagion", "Shield Charge", "Resonating Shield", "Shield Wall", "Chaos Bolt", "Power Siphon", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual",
+                    "Dark Effigy", "Hexblast", "Offensive Hex", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric",
+                    "Enfeeble", "Vulnerability", "Despair", "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", 
+                    "Flameblast", "Living Bomb", "Flame Wall",
+                    "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", 
+                    "Eye of Winter", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Decompose",
+                    "Frostbolt", "Incinerate", "Flammability", "Hypothermia", "Conductivity", "Frost Wall", "Lightning Warp", "Ball Lightning", "Temporal Chains", "Detonate Dead", "Bone Blast", "Volitile Dead"
+                ],
+                staff: [
+                    "Firebolt", "Freezing Shards", "Lightning Bolt", "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", 
+                    "Flameblast", "Living Bomb", "Flame Wall",
+                    "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", 
+                    "Eye of Winter", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", 
+                    "Frostbolt", "Incinerate", "Flammability", "Hypothermia", "Conductivity", "Frost Wall", "Lightning Warp", "Ball Lightning", "Temporal Chains", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual",
+                    "Dark Effigy", "Hexblast", "Offensive Hex", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric",
+                    "Enfeeble", "Vulnerability", "Despair", "Contagion", "Detonate Dead", "Living Bomb"
+                ],
+                sceptre: [
+                    "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric","Detonate Dead"
+                ]
+                bow: [
+                    "Explosive Shot", "Poison Arrow", "Lightning Arrow", "Ice Shot",
+                    "Poisonburst Arrow", "Toxic Growth", "Gas Arrow", "Escape Shot",
+                    "Freezing Salvo", "Lightning Rod", "Stormcaller Arrow", "Shockchain Arrow",
+                    "Magnetic Salvo", "Snipe", "Rain of Arrows", "Tornado Shot",
+                    "Spiral Volley", "Detonating Arrow"
+                ],
+                crossbow: [
+                    "Fragmentation Rounds", "Armour Piercing Rounds", "High Velocity Rounds", 
+                    "Permafrost Bolts", "Ice Shards", "Glacial Bolt", "Hailstorm Rounds", 
+                    "Incendiary Shot", "Rapid Shot", "Explosive Shot", "Seige Cascade", 
+                    "Galvanic Shards", "Stormblast Bolts", "Shockburst Rounds", "Plasma Blast", 
+                    "Explosive Grenade", "Gas Grenade", "Cluster Grenade", "Voltaic Grenade", 
+                    "Ripwire Ballista", "Artillery Ballista", "Rapid Fire"
+                ],
+                quarterstaff: [
+                    "Falling Thunder", "Tempest Bell", "Wind Blast", "Ice Strike",
+                    "Tempest Flurry", "Storm Wave", "Charged Staff", "Gathering Storm",
+                    "Glacial Cascade", "Frozen Locus", "Wave of Frost", "Shattering Palm",
+                    "Whirling Assault", "Flicker Strike", "Staggering Palm"
+                ],
+                mace: [
+                    "Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder",
+                    "Stampede", "Hammer of the Gods", "Shockwave Totem",
+                    "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure", "Shield Charge", "Resonating Shield", "Shield Wall", "Supercharged Slam"
+                ],
+                spear: [
+                    "Perfect Strike", "Lacerate", "Whirling Slash", "Twister",
+                    "Whirlwind Lance", "Wind Serpents Fury", "Explosive Spear",
+                    "Spear of Solaris", "Lightning Spear", "Storm Lance",
+                    "Primal Strikes", "Thunderous Leap", "Fangs of Frost",
+                    "Glacial Lance", "Rake", "Rapid Assault", "Blood Hunt",
+                    "Tame Beast", "Elemental Sundering", "Shield Charge", "Resonating Shield", "Shield Wall"
+                ]

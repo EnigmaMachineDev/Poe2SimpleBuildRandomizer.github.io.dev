@@ -22,3 +22,15 @@ It should be part of the skill pool regardless of weapon when the roll all butto
 For example if I am a pathfinder, regardless of what the primary weapon is, I should be able to roll the pathfinder skills from the reference:
 ["Bleeding Concoction", "Poison Concoction", "Shattering Concoction","Fulminating Concoction", "Explosive Concoction"]
 
+
+--------------------------------------------------------------------------------------------------------------
+
+
+In randomizer.json right now there are many different weapon combinations. 
+I want to reduce this to just use each specific weapon type. So for example instead of Wand + Focus, Wand + Shield, Wand  + Sceptre, I wand there to just be "Wand" with all of the skill options from each. 
+That way the user has a bit more freedom of choice for their offhand weapon or if they will two hand a weapon or if they will dual wield, etc. 
+
+--------------------------------------------------------------------------------------------------------------
+
+
+Using skillsReference as reference material, refactor the weapon/skill section in randomizer.json.

@@ -75,26 +75,38 @@ const buildData = {
             skills: {
                 elemental: [
                     "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", 
-                    "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall",
+                    "Flameblast", "Living Bomb", "Flame Wall",
                     "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", 
-                    "Eye of Winter", "Ice Shards", "Ice Bolt",
-                    "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt",
-                    "Enfeeble", "Vulnerability", "Despair"
+                    "Eye of Winter", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", 
+                    "Frostbolt", "Incinerate", "Flammability", "Hypothermia", "Conductivity", "Frost Wall", "Lightning Warp", "Ball Lightning", "Temporal Chains"
+                    
                 ],
                 occult: [
                     "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual",
-                    "Dark Effigy", "Hexblast", "Offensive Hex"
-                ],
-                minion: [
-                    "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
-                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre"
-                ],
-                offering: [
-                    "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric"
+                    "Dark Effigy", "Hexblast", "Offensive Hex", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric",
+                    "Enfeeble", "Vulnerability", "Despair"
                 ],
                 wand: [
-                    "Contagion", "Enfeeble", "Vulnerability", "Despair"
+                    "Contagion", "Shield Charge", "Resonating Shield", "Shield Wall", "Chaos Bolt", "Power Siphon", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual",
+                    "Dark Effigy", "Hexblast", "Offensive Hex", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric",
+                    "Enfeeble", "Vulnerability", "Despair", "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", 
+                    "Flameblast", "Living Bomb", "Flame Wall",
+                    "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", 
+                    "Eye of Winter", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", 
+                    "Frostbolt", "Incinerate", "Flammability", "Hypothermia", "Conductivity", "Frost Wall", "Lightning Warp", "Ball Lightning", "Temporal Chains", "Detonate Dead"
                 ],
+                staff: [
+                    "Firebolt", "Freezing Shards", "Lightning Bolt", "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", 
+                    "Flameblast", "Living Bomb", "Flame Wall",
+                    "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", 
+                    "Eye of Winter", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", 
+                    "Frostbolt", "Incinerate", "Flammability", "Hypothermia", "Conductivity", "Frost Wall", "Lightning Warp", "Ball Lightning", "Temporal Chains", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual",
+                    "Dark Effigy", "Hexblast", "Offensive Hex", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric",
+                    "Enfeeble", "Vulnerability", "Despair", "Contagion", "Detonate Dead"
+                ]
                 bow: [
                     "Explosive Shot", "Poison Arrow", "Lightning Arrow", "Ice Shot",
                     "Poisonburst Arrow", "Toxic Growth", "Gas Arrow", "Escape Shot",
@@ -116,16 +128,10 @@ const buildData = {
                     "Glacial Cascade", "Frozen Locus", "Wave of Frost", "Shattering Palm",
                     "Whirling Assault", "Flicker Strike", "Staggering Palm"
                 ],
-                twohanded_mace: [
-                    "Supercharged Slam"
-                ],
                 mace: [
                     "Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder",
                     "Stampede", "Hammer of the Gods", "Shockwave Totem",
-                    "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure"
-                ],
-                shield: [
-                    "Shield Charge", "Resonating Shield", "Shield Wall"
+                    "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure", "Shield Charge", "Resonating Shield", "Shield Wall", "Supercharged Slam"
                 ],
                 spear: [
                     "Perfect Strike", "Lacerate", "Whirling Slash", "Twister",
@@ -133,17 +139,7 @@ const buildData = {
                     "Spear of Solaris", "Lightning Spear", "Storm Lance",
                     "Primal Strikes", "Thunderous Leap", "Fangs of Frost",
                     "Glacial Lance", "Rake", "Rapid Assault", "Blood Hunt",
-                    "Tame Beast", "Elemental Sundering"
-                ],
-                pathfinder: [
-                    "Bleeding Concoction", "Poison Concoction", "Shattering Concoction",
-                    "Fulminating Concoction", "Explosive Concoction"
-                ],
-                smith_of_kitava: [
-                    "Manifest Weapon"
-                ],
-                warbringer: [
-                    "Seismic Cry", "Infernal Cry"
+                    "Tame Beast", "Elemental Sundering", "Shield Charge", "Resonating Shield", "Shield Wall"
                 ]
             },
             
