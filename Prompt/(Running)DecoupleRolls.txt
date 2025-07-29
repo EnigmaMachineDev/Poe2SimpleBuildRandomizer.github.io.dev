@@ -5,3 +5,10 @@ I want to make this application a bit more simple, and a bit easier for users to
 2. Remove the weaponCompatibility section from randomizer.json.
 3. Combine WeaponType and Main Skill(s) Sections. Instead of the current logic, use skills in randomizer.json. First roll a weapon from it, and then roll 1-3 skills from inside that weapon's skill array.
 4. Remove the restrictions so that each of class and ascendency, weapontype and main skills, and defense strategy can be rolled seperately from their respective sections in randomizer.json after the attribute restrictions have been removed.
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+When you decoupled the rolls you changed randomizer.json completely to use path of exile 1 classes, weapons, and skills. Please revert this change to use poe 2 classes weapons and skills. 
+Reference randomizerReference file to make this change (it is a copy of the old buildData).

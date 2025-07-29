@@ -1,0 +1,169 @@
+const buildData = {
+            classes: [
+                { 
+                    name: "Witch", 
+                    ascendancies: ["Infernalist", "Blood Mage", "Lich"],
+                    attributes: ["Intelligence", "Dexterity and Intelligence", "Intelligence and Strength", "Strength", "Dexterity"]
+                },
+                { 
+                    name: "Sorceress", 
+                    ascendancies: ["Stormweaver", "Chronomancer"],
+                    attributes: ["Intelligence", "Dexterity and Intelligence", "Intelligence and Strength", "Strength", "Dexterity"]
+                },
+                { 
+                    name: "Monk", 
+                    ascendancies: ["Invoker", "Acolyte of Chayula"],
+                    attributes: ["Dexterity and Intelligence", "Intelligence", "Dexterity", "Intelligence and Strength", "Dexterity and Strength"]
+                },
+                { 
+                    name: "Ranger", 
+                    ascendancies: ["Deadeye", "Pathfinder"],
+                    attributes: ["Dexterity", "Dexterity and Intelligence", "Dexterity and Strength", "Strength", "Intelligence"]
+                },
+                { 
+                    name: "Mercenary", 
+                    ascendancies: ["Witchhunter", "Gemling Legionnaire", "Tactician"],
+                    attributes: ["Dexterity and Strength", "Dexterity", "Strength", "Dexterity and Intelligence", "Intelligence and Strength"]
+                },
+                { 
+                    name: "Warrior", 
+                    ascendancies: ["Titan", "Warbringer", "Smith of Kitava"],
+                    attributes: ["Strength", "Dexterity and Strength", "Intelligence and Strength", "Dexterity", "Intelligence"]
+                },
+                { 
+                    name: "Huntress", 
+                    ascendancies: ["Amazon", "Ritualist"],
+                    attributes: ["Dexterity", "Dexterity and Intelligence", "Dexterity and Strength", "Strength", "Intelligence"]
+                }
+            ],
+            
+            weapons: {
+                "Staff": { attributes: ["Intelligence"] },
+                "Wand + Focus": { attributes: ["Intelligence"] },
+                "Dual Wands": { attributes: ["Intelligence"] },
+                "Wand + Sceptre": { attributes: ["Intelligence"] },
+                "Wand + Shield": { attributes: ["Intelligence"] },
+                "Scepter + Shield": { attributes: ["Intelligence"] },
+                "Scepter + Focus": { attributes: ["Intelligence"] },
+                "Bow": { attributes: ["Dexterity"] },
+                "Crossbow": { attributes: ["Dexterity and Strength"] },
+                "Quarterstaff": { attributes: ["Dexterity and Intelligence"] },
+                "Mace + Shield": { attributes: ["Strength"] },
+                "Mace + Sceptre": { attributes: ["Intelligence and Strength"] },
+                "Two-Handed Mace": { attributes: ["Strength"] },
+                "Spear + Shield": { attributes: ["Dexterity"] },
+                "Spear": { attributes: ["Dexterity"] },
+                "Spear + Sceptre": { attributes: ["Dexterity and Intelligence"] },
+                "Dual Wielding Maces": { attributes: ["Strength"] }
+            },
+
+            defenseTypes: {
+                "Armour": { attributes: ["Strength"] },
+                "Armour and Energy Shield": { attributes: ["Intelligence and Strength"] },
+                "Armour and Evasion": { attributes: ["Dexterity and Strength"] },
+                "Block and Armour": { attributes: ["Strength"] },
+                "Block, Armour, and Evasion": { attributes: ["Dexterity and Strength"] },
+                "Block, Armour, and Energy Shield": { attributes: ["Intelligence and Strength"] },
+                "Block and Energy Shield": { attributes: ["Intelligence"] },
+                "Block, Energy Shield, and Evasion": { attributes: ["Dexterity and Intelligence"] },
+                "Block and Evasion": { attributes: ["Dexterity"] },
+                "Energy Shield": { attributes: ["Intelligence"] },
+                "Energy Shield and Evasion": { attributes: ["Dexterity and Intelligence"] },
+                "Evasion": { attributes: ["Dexterity"] }
+            },
+            
+            skills: {
+                elemental: [
+                    "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", 
+                    "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall",
+                    "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", 
+                    "Eye of Winter", "Ice Shards", "Ice Bolt",
+                    "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt",
+                    "Enfeeble", "Vulnerability", "Despair"
+                ],
+                occult: [
+                    "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual",
+                    "Dark Effigy", "Hexblast", "Offensive Hex"
+                ],
+                minion: [
+                    "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute",
+                    "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre"
+                ],
+                offering: [
+                    "Pain Offering", "Bone Offering", "Soul Offering", "Skeletal Warrior", "Skeletal Cleric"
+                ],
+                wand: [
+                    "Contagion", "Enfeeble", "Vulnerability", "Despair"
+                ],
+                bow: [
+                    "Explosive Shot", "Poison Arrow", "Lightning Arrow", "Ice Shot",
+                    "Poisonburst Arrow", "Toxic Growth", "Gas Arrow", "Escape Shot",
+                    "Freezing Salvo", "Lightning Rod", "Stormcaller Arrow", "Shockchain Arrow",
+                    "Magnetic Salvo", "Snipe", "Rain of Arrows", "Tornado Shot",
+                    "Spiral Volley", "Detonating Arrow"
+                ],
+                crossbow: [
+                    "Fragmentation Rounds", "Armour Piercing Rounds", "High Velocity Rounds", 
+                    "Permafrost Bolts", "Ice Shards", "Glacial Bolt", "Hailstorm Rounds", 
+                    "Incendiary Shot", "Rapid Shot", "Explosive Shot", "Seige Cascade", 
+                    "Galvanic Shards", "Stormblast Bolts", "Shockburst Rounds", "Plasma Blast", 
+                    "Explosive Grenade", "Gas Grenade", "Cluster Grenade", "Voltaic Grenade", 
+                    "Ripwire Ballista", "Artillery Ballista", "Rapid Fire"
+                ],
+                quarterstaff: [
+                    "Falling Thunder", "Tempest Bell", "Wind Blast", "Ice Strike",
+                    "Tempest Flurry", "Storm Wave", "Charged Staff", "Gathering Storm",
+                    "Glacial Cascade", "Frozen Locus", "Wave of Frost", "Shattering Palm",
+                    "Whirling Assault", "Flicker Strike", "Staggering Palm"
+                ],
+                twohanded_mace: [
+                    "Supercharged Slam"
+                ],
+                mace: [
+                    "Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder",
+                    "Stampede", "Hammer of the Gods", "Shockwave Totem",
+                    "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure"
+                ],
+                shield: [
+                    "Shield Charge", "Resonating Shield", "Shield Wall"
+                ],
+                spear: [
+                    "Perfect Strike", "Lacerate", "Whirling Slash", "Twister",
+                    "Whirlwind Lance", "Wind Serpents Fury", "Explosive Spear",
+                    "Spear of Solaris", "Lightning Spear", "Storm Lance",
+                    "Primal Strikes", "Thunderous Leap", "Fangs of Frost",
+                    "Glacial Lance", "Rake", "Rapid Assault", "Blood Hunt",
+                    "Tame Beast", "Elemental Sundering"
+                ],
+                pathfinder: [
+                    "Bleeding Concoction", "Poison Concoction", "Shattering Concoction",
+                    "Fulminating Concoction", "Explosive Concoction"
+                ],
+                smith_of_kitava: [
+                    "Manifest Weapon"
+                ],
+                warbringer: [
+                    "Seismic Cry", "Infernal Cry"
+                ]
+            },
+            
+            weaponCompatibility: {
+                "Staff": ["elemental", "occult"],
+                "Wand + Focus": ["elemental", "occult"],
+                "Dual Wands": ["elemental", "occult"],
+                "Wand + Sceptre": ["elemental", "minion", "wand", "occult"],
+                "Wand + Shield": ["elemental", "minion", "wand", "occult", "shield"],
+                "Scepter + Shield": ["elemental", "occult", "minion", "shield"],
+                "Scepter + Focus": ["elemental", "occult", "minion"],
+                "Bow": ["bow"],
+                "Crossbow": ["crossbow"],
+                "Quarterstaff": ["quarterstaff"],
+                "Mace + Shield": ["mace", "shield"],
+                "Mace + Sceptre": ["mace", "elemental", "minion", "occult"],
+                "Two-Handed Mace": ["twohanded_mace", "mace"],
+                "Spear + Shield": ["spear", "shield"],
+                "Spear": ["spear"],
+                "Spear + Sceptre": ["spear", "elemental", "minion", "occult"],
+                "Dual Wielding Maces": ["mace"]
+            }
+        };

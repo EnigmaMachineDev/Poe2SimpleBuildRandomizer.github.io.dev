@@ -1,29 +1,45 @@
+
 {
   "classes": [
-    { "name": "Marauder", "ascendancies": ["Juggernaut", "Berserker", "Chieftain"] },
-    { "name": "Duelist", "ascendancies": ["Slayer", "Gladiator", "Champion"] },
-    { "name": "Ranger", "ascendancies": ["Deadeye", "Raider", "Pathfinder"] },
-    { "name": "Shadow", "ascendancies": ["Assassin", "Saboteur", "Trickster"] },
-    { "name": "Witch", "ascendancies": ["Necromancer", "Elementalist", "Occultist"] },
-    { "name": "Templar", "ascendancies": ["Inquisitor", "Hierophant", "Guardian"] },
-    { "name": "Scion", "ascendancies": ["Ascendant"] }
+    { "name": "Witch", "ascendancies": ["Infernalist", "Blood Mage", "Lich"] },
+    { "name": "Sorceress", "ascendancies": ["Stormweaver", "Chronomancer"] },
+    { "name": "Monk", "ascendancies": ["Invoker", "Acolyte of Chayula"] },
+    { "name": "Ranger", "ascendancies": ["Deadeye", "Pathfinder"] },
+    { "name": "Mercenary", "ascendancies": ["Witchhunter", "Gemling Legionnaire", "Tactician"] },
+    { "name": "Warrior", "ascendancies": ["Titan", "Warbringer", "Smith of Kitava"] },
+    { "name": "Huntress", "ascendancies": ["Amazon", "Ritualist"] }
   ],
   "weapons": [
-    { "name": "Swords", "skills": ["Heavy Strike", "Cleave", "Dual Strike", "Viper Strike", "Whirling Blades", "Puncture", "Double Strike", "Elemental Hit"] },
-    { "name": "Maces", "skills": ["Heavy Strike", "Ground Slam", "Sweep", "Molten Strike", "Glacial Hammer", "Double Strike", "Elemental Hit"] },
-    { "name": "Axes", "skills": ["Heavy Strike", "Cleave", "Molten Strike", "Double Strike", "Elemental Hit"] },
-    { "name": "Daggers", "skills": ["Dual Strike", "Viper Strike", "Whirling Blades", "Puncture", "Ethereal Knives", "Elemental Hit"] },
-    { "name": "Claws", "skills": ["Dual Strike", "Viper Strike", "Whirling Blades", "Puncture", "Elemental Hit"] },
-    { "name": "Staves", "skills": ["Ground Slam", "Sweep", "Glacial Hammer", "Elemental Hit"] },
-    { "name": "Bows", "skills": ["Puncture", "Burning Arrow", "Split Arrow", "Caustic Arrow", "Poison Arrow", "Elemental Hit"] },
-    { "name": "Wands", "skills": ["Freezing Pulse", "Ice Spear", "Power Siphon", "Kinetic Blast", "Fireball", "Spark", "Arc", "Elemental Hit"] }
+    { "name": "Staff", "skills": ["Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex"] },
+    { "name": "Wand + Focus", "skills": ["Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex"] },
+    { "name": "Dual Wands", "skills": ["Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex"] },
+    { "name": "Wand + Sceptre", "skills": ["Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute", "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Contagion", "Enfeeble", "Vulnerability", "Despair", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex"] },
+    { "name": "Wand + Shield", "skills": ["Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute", "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Contagion", "Enfeeble", "Vulnerability", "Despair", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex", "Shield Charge", "Resonating Shield", "Shield Wall"] },
+    { "name": "Scepter + Shield", "skills": ["Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute", "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Shield Charge", "Resonating Shield", "Shield Wall"] },
+    { "name": "Scepter + Focus", "skills": ["Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute", "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre"] },
+    { "name": "Bow", "skills": ["Explosive Shot", "Poison Arrow", "Lightning Arrow", "Ice Shot", "Poisonburst Arrow", "Toxic Growth", "Gas Arrow", "Escape Shot", "Freezing Salvo", "Lightning Rod", "Stormcaller Arrow", "Shockchain Arrow", "Magnetic Salvo", "Snipe", "Rain of Arrows", "Tornado Shot", "Spiral Volley", "Detonating Arrow"] },
+    { "name": "Crossbow", "skills": ["Fragmentation Rounds", "Armour Piercing Rounds", "High Velocity Rounds", "Permafrost Bolts", "Ice Shards", "Glacial Bolt", "Hailstorm Rounds", "Incendiary Shot", "Rapid Shot", "Explosive Shot", "Seige Cascade", "Galvanic Shards", "Stormblast Bolts", "Shockburst Rounds", "Plasma Blast", "Explosive Grenade", "Gas Grenade", "Cluster Grenade", "Voltaic Grenade", "Ripwire Ballista", "Artillery Ballista", "Rapid Fire"] },
+    { "name": "Quarterstaff", "skills": ["Falling Thunder", "Tempest Bell", "Wind Blast", "Ice Strike", "Tempest Flurry", "Storm Wave", "Charged Staff", "Gathering Storm", "Glacial Cascade", "Frozen Locus", "Wave of Frost", "Shattering Palm", "Whirling Assault", "Flicker Strike", "Staggering Palm"] },
+    { "name": "Mace + Shield", "skills": ["Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder", "Stampede", "Hammer of the Gods", "Shockwave Totem", "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure", "Shield Charge", "Resonating Shield", "Shield Wall"] },
+    { "name": "Mace + Sceptre", "skills": ["Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder", "Stampede", "Hammer of the Gods", "Shockwave Totem", "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure", "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute", "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex"] },
+    { "name": "Two-Handed Mace", "skills": ["Supercharged Slam", "Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder", "Stampede", "Hammer of the Gods", "Shockwave Totem", "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure"] },
+    { "name": "Spear + Shield", "skills": ["Perfect Strike", "Lacerate", "Whirling Slash", "Twister", "Whirlwind Lance", "Wind Serpents Fury", "Explosive Spear", "Spear of Solaris", "Lightning Spear", "Storm Lance", "Primal Strikes", "Thunderous Leap", "Fangs of Frost", "Glacial Lance", "Rake", "Rapid Assault", "Blood Hunt", "Tame Beast", "Elemental Sundering", "Shield Charge", "Resonating Shield", "Shield Wall"] },
+    { "name": "Spear", "skills": ["Perfect Strike", "Lacerate", "Whirling Slash", "Twister", "Whirlwind Lance", "Wind Serpents Fury", "Explosive Spear", "Spear of Solaris", "Lightning Spear", "Storm Lance", "Primal Strikes", "Thunderous Leap", "Fangs of Frost", "Glacial Lance", "Rake", "Rapid Assault", "Blood Hunt", "Tame Beast", "Elemental Sundering"] },
+    { "name": "Spear + Sceptre", "skills": ["Perfect Strike", "Lacerate", "Whirling Slash", "Twister", "Whirlwind Lance", "Wind Serpents Fury", "Explosive Spear", "Spear of Solaris", "Lightning Spear", "Storm Lance", "Primal Strikes", "Thunderous Leap", "Fangs of Frost", "Glacial Lance", "Rake", "Rapid Assault", "Blood Hunt", "Tame Beast", "Elemental Sundering", "Ember Fusillade", "Incinerate", "Solar Orb", "Fireball", "Firestorm", "Flameblast", "Flamebolt", "Living Bomb", "Flame Wall", "Ice Nova", "Frost Bomb", "Frostbolt", "Cold Snap", "Comet", "Eye of Winter", "Ice Shards", "Ice Bolt", "Spark", "Orb of Storms", "Arc", "Lightning Conduit", "Lightning Bolt", "Enfeeble", "Vulnerability", "Despair", "Skeletal Sniper", "Raise Zombie", "Skeletal Reaver", "Skeletal Brute", "Skeletal Arsonist", "Skeletal Frost Mage", "Skeletal Storm Mage", "Bind Spectre", "Unearth", "Bone Cage", "Bonestorm", "Essence Drain", "Profane Ritual", "Dark Effigy", "Hexblast", "Offensive Hex"] },
+    { "name": "Dual Wielding Maces", "skills": ["Earthquake", "Boneshatter", "Rolling Slam", "Earthshatter", "Sunder", "Stampede", "Hammer of the Gods", "Shockwave Totem", "Ancestral Warrior Totem", "Perfect Strike", "Molten Blast", "Volcanic Fissure"] }
   ],
   "defense": [
     { "name": "Armour" },
-    { "name": "Evasion" },
+    { "name": "Armour and Energy Shield" },
+    { "name": "Armour and Evasion" },
+    { "name": "Block and Armour" },
+    { "name": "Block, Armour, and Evasion" },
+    { "name": "Block, Armour, and Energy Shield" },
+    { "name": "Block and Energy Shield" },
+    { "name": "Block, Energy Shield, and Evasion" },
+    { "name": "Block and Evasion" },
     { "name": "Energy Shield" },
-    { "name": "Hybrid: Armour/Evasion" },
-    { "name": "Hybrid: Armour/Energy Shield" },
-    { "name": "Hybrid: Evasion/Energy Shield" }
+    { "name": "Energy Shield and Evasion" },
+    { "name": "Evasion" }
   ]
 }
