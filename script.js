@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Rolling defense');
         const randomDefense = getRandomItem(data.defense);
         if (!randomDefense) return;
-        document.getElementById('defense-strategy-result').textContent = `Defense Strategy: ${randomDefense.name}`;
+        document.getElementById('defense-strategy-result').textContent = `${randomDefense.name}`;
     }
 
     function rollAll() {
