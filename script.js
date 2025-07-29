@@ -1,89 +1,50 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    const generateBtn = document.getElementById('generate-btn');
-    const classInfoEl = document.getElementById('classInfo');
-    const weaponInfoEl = document.getElementById('weaponInfo');
-    const skillInfoEl = document.getElementById('skillInfo');
-    const defenseInfoEl = document.getElementById('defenseInfo');
+    let data;
 
-    let buildData = null;
+    fetch('randomizer.json')
+        .then(response => response.json())
+        .then(jsonData => {
+            data = jsonData;
+            setupEventListeners();
+        });
 
-    async function loadData() {
-        try {
-            const response = await fetch('randomizer.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            buildData = await response.json();
-            generateBtn.disabled = false;
-        } catch (error) {
-            console.error("Failed to load build data:", error);
-        }
+    function setupEventListeners() {
+        document.getElementById('roll-all-btn').addEventListener('click', rollAll);
+        document.getElementById('roll-class-btn').addEventListener('click', rollClassAndAscendancy);
+        document.getElementById('roll-weapon-skills-btn').addEventListener('click', rollWeaponAndSkills);
+        document.getElementById('roll-defense-btn').addEventListener('click', rollDefense);
     }
 
-    function getRandomElement(arr) {
+    function getRandomItem(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    function isWeaponCompatibleWithClass(selectedClass, weaponName) {
-        const weaponAttributes = buildData.weapons[weaponName].attributes;
-        const classAttributes = selectedClass.attributes;
-        return(classAttributes.includes(weaponAttributes[0]));
+    function rollClassAndAscendancy() {
+        const randomClass = getRandomItem(data.classes);
+        const randomAscendancy = getRandomItem(randomClass.ascendancies);
+        document.getElementById('class-result').textContent = `Class: ${randomClass.name}`;
+        document.getElementById('ascendancy-result').textContent = `Ascendancy: ${randomAscendancy}`;
     }
 
-    function isWeaponCompatibleWithDefenseType(selectedClass, defenseType, selectedWeapon) {
-        if (defenseType.includes("Block") && !selectedWeapon.includes("Shield")) {
-            return false;
-        }
-        const defenseTypeAttributes = buildData.defenseTypes[defenseType].attributes;
-        const classAttributes = selectedClass.attributes;
-        return(classAttributes.includes(defenseTypeAttributes[0]));
-    }
-
-    function generateBuild() {
-        const selectedClass = getRandomElement(buildData.classes);
-        const selectedAscendancy = getRandomElement(selectedClass.ascendancies);
-        const compatibleWeapons = Object.keys(buildData.weapons).filter(weaponName => 
-            isWeaponCompatibleWithClass(selectedClass, weaponName)
-        );
-        const selectedWeapon = getRandomElement(compatibleWeapons);
-        const compatibleDefenseTypes = Object.keys(buildData.defenseTypes).filter(defenseType => 
-            isWeaponCompatibleWithDefenseType(selectedClass, defenseType, selectedWeapon)
-        );
-        const selectedDefenseType = getRandomElement(compatibleDefenseTypes);
-        const compatibleCategories = buildData.weaponCompatibility[selectedWeapon];
-        const compatibleSkills = [];
-        compatibleCategories.forEach(category => {
-            if (buildData.skills[category]) {
-                compatibleSkills.push(...buildData.skills[category]);
-            }
-        });
-        if (selectedAscendancy === "Warbringer" && buildData.skills.warbringer) {
-            compatibleSkills.push(...buildData.skills.warbringer);
-        }
-        if (selectedAscendancy === "Pathfinder" && buildData.skills.pathfinder) {
-            compatibleSkills.push(...buildData.skills.pathfinder);
-        }
-        if (selectedAscendancy === "Smith of Kitava" && buildData.skills.smith_of_kitava) {
-            compatibleSkills.push(...buildData.skills.smith_of_kitava);
-        }
-        const uniqueSkills = [...new Set(compatibleSkills)];
-        const numSkills = Math.random() < 0.50 ? 2 : 1;
+    function rollWeaponAndSkills() {
+        const randomWeapon = getRandomItem(data.weapons);
+        const numSkills = Math.floor(Math.random() * 3) + 1;
         const selectedSkills = [];
-        const skillsCopy = [...uniqueSkills];
-        for (let i = 0; i < numSkills && skillsCopy.length > 0; i++) {
-            const skill = getRandomElement(skillsCopy);
-            selectedSkills.push(skill);
-            skillsCopy.splice(skillsCopy.indexOf(skill), 1);
+        for (let i = 0; i < numSkills; i++) {
+            selectedSkills.push(getRandomItem(randomWeapon.skills));
         }
-        
-        classInfoEl.innerHTML = `<span class="highlight">${selectedClass.name}</span> → <span class="highlight">${selectedAscendancy}</span>`;
-        weaponInfoEl.innerHTML = `<span class="highlight">${selectedWeapon}</span>`;
-        skillInfoEl.innerHTML = selectedSkills.map(skill => `<span class="highlight">${skill}</span>`).join(numSkills > 1 ? ' + ' : '');
-        defenseInfoEl.innerHTML = `<span class="highlight">${selectedDefenseType}</span>`;
+        document.getElementById('weapon-type-result').textContent = `Weapon Type: ${randomWeapon.name}`;
+        document.getElementById('main-skills-result').textContent = `Main Skill(s): ${selectedSkills.join(', ')}`;
     }
 
-    generateBtn.addEventListener('click', generateBuild);
+    function rollDefense() {
+        const randomDefense = getRandomItem(data.defense);
+        document.getElementById('defense-strategy-result').textContent = `Defense Strategy: ${randomDefense.name}`;
+    }
 
-    loadData();
+    function rollAll() {
+        rollClassAndAscendancy();
+        rollWeaponAndSkills();
+        rollDefense();
+    }
 });

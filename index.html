@@ -13,25 +13,32 @@
     <div class="container">
         <h1>Path of Exile 2<br>Random Build Idea Generator</h1>
         <div class="controls">
-            <button class="generate-btn" id="generate-btn" disabled>
-                🎲 Generate Random Build
+            <button class="generate-btn" id="roll-all-btn">
+                🎲 Roll All
             </button>
         </div>
         <div class="build-section">
             <div class="section-title">🏛️ Class & Ascendancy</div>
-            <div class="section-content" id="classInfo"></div>
+            <div class="section-content">
+                <p id="class-result"></p>
+                <p id="ascendancy-result"></p>
+            </div>
+            <button class="reroll-btn" id="roll-class-btn">Re-roll Class</button>
         </div>
         <div class="build-section">
-            <div class="section-title">⚔️ Weapon Type</div>
-            <div class="section-content" id="weaponInfo"></div>
-        </div>
-        <div class="build-section">
-            <div class="section-title">🔮 Main Skill(s)</div>
-            <div class="section-content" id="skillInfo"></div>
+            <div class="section-title">⚔️ Weapon Type & Main Skill(s)</div>
+            <div class="section-content">
+                <p id="weapon-type-result"></p>
+                <p id="main-skills-result"></p>
+            </div>
+            <button class="reroll-btn" id="roll-weapon-skills-btn">Re-roll Weapon/Skills</button>
         </div>
         <div class="build-section">
             <div class="section-title">🛡️ Defense Strategy</div>
-            <div class="section-content" id="defenseInfo"></div>
+            <div class="section-content">
+                <p id="defense-strategy-result"></p>
+            </div>
+            <button class="reroll-btn" id="roll-defense-btn">Re-roll Defense</button>
         </div>
     </div>
     <div class="footer">
