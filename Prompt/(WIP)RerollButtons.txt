@@ -1,4 +1,0 @@
-I would like to add reroll buttons to this application which will reroll particular aspects of the randomly generated build. Please use the app in exampleApp as an example for how they should be styled.
-
-1. Rerolling class and ascendency should not have a reroll button, because all of the other rolls depend on class and ascendency this would be redundant.
-2. 
