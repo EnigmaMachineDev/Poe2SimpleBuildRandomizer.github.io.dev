@@ -14,24 +14,31 @@ body {
 
 .ad-banner-top {
     margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
 }
 
 .ad-banner-bottom {
     margin-top: 60px;
+    display: flex;
+    justify-content: center;
 }
 
 .main-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1400px;
 }
 
-.ad-banner-left {
-    margin-right: 60px;
-}
-
+.ad-banner-left,
 .ad-banner-right {
-    margin-left: 60px;
+    flex-shrink: 0;
+    width: 160px;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
@@ -42,6 +49,7 @@ body {
     text-align: center;
     width: 900px;
     position: relative;
+    flex-shrink: 0;
 }
 
 h1 {
@@ -170,6 +178,17 @@ h1 {
     box-shadow: 0 5px 15px rgba(102, 187, 106, 0.2);
 }
 
+@media (max-width: 1400px) {
+    .ad-banner-left,
+    .ad-banner-right {
+        display: none;
+    }
+    
+    .main-content {
+        gap: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 25px;
@@ -178,4 +197,16 @@ h1 {
     }
     
     h1 {
-        font-s
+        font-size: 2.2em;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .generate-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
