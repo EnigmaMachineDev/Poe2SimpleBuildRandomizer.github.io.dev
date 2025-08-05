@@ -1,1 +1,0 @@
-Please refactor the styling of the reroll buttons to match the style of the reroll buttons in the exampleApp.

@@ -1,3 +1,0 @@
-1. Currently the application is all in index.html. Please maintain seperation of concerns by splitting it into seperate javascript, css, and html files. Please leave this script tag in the html file though:     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4167298152172606" crossorigin="anonymous"></script>
-2. Seperate all of the randomizer data into a json file called randomizer.json, make sure the app still functions exactly as before, the only difference being that buildData is in its own randomizer.json file.
-3. The styling of this app is out of date with my other randomizer applications. Please reference exampleApp as a style example, and change this application to have a similar dark theme with green text.
