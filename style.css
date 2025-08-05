@@ -53,7 +53,7 @@ body {
 }
 
 h1 {
-    color: #66bb6a; /* Green */
+    color: #66bb6a;
     margin-bottom: 30px;
 }
 
@@ -78,6 +78,11 @@ h1 {
     transform: scale(0.98);
 }
 
+.generate-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
 .build-section {
     background: #333;
     margin: 25px 0;
@@ -87,7 +92,7 @@ h1 {
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    text-align: left; /* Align text to the left */
+    text-align: left;
 }
 
 .build-section:hover {
@@ -137,6 +142,11 @@ h1 {
 
 .reroll-btn:hover {
     background-color: #5a5a5a;
+}
+
+.reroll-btn:disabled {
+    background-color: #333;
+    cursor: not-allowed;
 }
 
 .highlight {
@@ -196,6 +206,11 @@ h1 {
         width: 90%;
     }
     
+    .ad-banner-top,
+    .ad-banner-bottom {
+        margin: 30px 0;
+    }
+
     h1 {
         font-size: 2.2em;
     }
