@@ -12,18 +12,6 @@ body {
     box-sizing: border-box;
 }
 
-.ad-banner-top {
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: center;
-}
-
-.ad-banner-bottom {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-}
-
 .main-content {
     display: flex;
     align-items: flex-start;
@@ -31,14 +19,6 @@ body {
     gap: 60px;
     width: 100%;
     max-width: 1400px;
-}
-
-.ad-banner-left,
-.ad-banner-right {
-    flex-shrink: 0;
-    width: 160px;
-    display: flex;
-    justify-content: center;
 }
 
 .container {
@@ -189,10 +169,6 @@ h1 {
 }
 
 @media (max-width: 1400px) {
-    .ad-banner-left,
-    .ad-banner-right {
-        display: none;
-    }
     
     .main-content {
         gap: 0;
@@ -204,11 +180,6 @@ h1 {
         padding: 25px;
         margin: 10px;
         width: 90%;
-    }
-    
-    .ad-banner-top,
-    .ad-banner-bottom {
-        margin: 30px 0;
     }
 
     h1 {
