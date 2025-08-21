@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentAscendancy;
 
     const ascendancySkills = {
-        "Pathfinder": ["Bleeding Concoction", "Poison Concoction", "Shattering Concoction", "Fulminating Concoction", "Explosive Concoction"],
+        "Pathfinder": ["Bleeding Concoction", "Acidic Concoction", "Shattering Concoction", "Fulminating Concoction", "Explosive Concoction"],
         "Smith of Kitava": ["Manifest Weapon"],
-        "Warbringer": ["Seismic Cry", "Infernal Cry"]
+        "Warbringer": ["Seismic Cry", "Infernal Cry", "Fortifying Cry", "Ancestral Cry"]
     };
 
     fetch('randomizer.json')
